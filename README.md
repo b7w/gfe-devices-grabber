@@ -1,16 +1,25 @@
 GFE Device Grabber
 ==================
 
-[![Build Status](https://drone.b7w.me/api/badges/b7w/socks5-tune/status.svg)](https://drone.b7w.me/b7w/socks5-tune)
+[![Build Status](https://github.com/b7w/gfe-devices-grabber/actions/workflows/release.yml/badge.svg)](https://drone.b7w.me/b7w/gfe-devices-grabber)
 
 Небольшая утилита для вытаскивания таблицы 'List Devices' из программы GFEConnector по средствам pywinauto.
 
 Сборка
 ------
 
-Установка зависимостей `poetry install`.
+Установка зависимостей
+```shell
+poetry install
+poetry run pytest
+poetry build
+```
 
-Создание дистрибутива `pyinstaller --windowed main.py`.
+Создание дистрибутива
+
+```shell
+poetry run pyinstaller src/gfe_devices_grabber/main.py --name "gfe-devices-grabber" --windowed --specpath src/ --noconfirm
+```
 
 
 О программе

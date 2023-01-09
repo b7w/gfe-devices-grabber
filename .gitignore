@@ -5,6 +5,10 @@
 \.idea/
 \.pytest_cache/
 
+ *\.egg-info/
+build/
+dist/
+
+src/gfe_devices_grabber/tmp.py
 tmp/
 target/
-*\.egg-info/
