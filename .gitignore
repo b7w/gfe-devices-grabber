@@ -1,0 +1,10 @@
+\.pyc
+\.pyo
+\.DS_Store
+
+\.idea/
+\.pytest_cache/
+
+tmp/
+target/
+*\.egg-info/
