@@ -31,9 +31,9 @@ def on_state_changed(state: State, lb1: tk.Label, lb2: tk.Label, lb3: tk.Label, 
         change_label(lb1, 'GFE Connector не найден', status=False)
 
     if state.is_devices_tab_table_opened:
-        change_label(lb2, 'Закладка "Devices" открыта.\nРежиме "Device List+All" выбран', status=True)
+        change_label(lb2, 'Закладка "Devices" открыта.\nРежиме "Device List" выбран', status=True)
     else:
-        change_label(lb2, 'Закладка "Devices" не открыта.\nИли режиме "Device List" не выбран', status=False)
+        change_label(lb2, 'Закладка "Devices" не открыта.\nИли режиме "Device List+All" не выбран', status=False)
 
     if state.records_count:
         change_label(lb3, 'Найдено {} записей'.format(state.records_count), status=True)

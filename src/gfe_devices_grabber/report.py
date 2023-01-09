@@ -8,5 +8,5 @@ def create_report(records, fname):
         ws.column_dimensions[lt].width = 32
     ws.append(['Loop', 'Device', 'Device Text', 'Type', 'Zone', 'Comments', 'Value'])
     for row in records:
-        ws.append(row)
+        ws.append([i.strip() for i in row])
     wb.save(fname)
