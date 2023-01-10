@@ -23,7 +23,7 @@ LOGGING = {
             'formatter': 'simple'
         },
         'windows': {
-            'level': 'WARNING',
+            'level': 'INFO',
             'class': 'logging.handlers.NTEventLogHandler',
             'appname': 'gfe-devices-grabber',
             'formatter': 'simple'
@@ -50,21 +50,18 @@ def grabber(state: State, detector: Detector):
 
 def main():
     with ThreadPoolExecutor(max_workers=2) as pool:
-        # t = threading.Thread(target=detector.loop)
-        # t.start()
         # create objects
         state = State()
         detector = Detector(state)
         window = create_window(state, lambda: pool.submit(grabber, state, detector))
 
         # start loops
-        logging.info('Staring..')
+        logging.error('Staring..')
         pool.submit(detector.loop)
         window.mainloop()
 
         # Stop detector loop
         state.is_alive = False
-        # t.join()
     logging.info('Stopped!')
 
 

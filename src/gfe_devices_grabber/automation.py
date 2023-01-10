@@ -69,6 +69,7 @@ class Detector:
 
     def _resolve_control(self, selector):
         try:
+            # We do not need retries and waiting
             ctrls = selector._WindowSpecification__resolve_control(selector.criteria, timeout=0, retry_interval=60)
             return ctrls[-1]
         except findwindows.ElementNotFoundError:

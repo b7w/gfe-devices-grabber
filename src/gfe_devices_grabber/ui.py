@@ -122,6 +122,6 @@ def create_window(state: State, grabber: Callable):
 
     window.bind(Events.STATE_CHANGED, lambda _: on_state_changed(state, lb1, lb2, lb3, lb_status, btn_grab))
     window.bind(Events.RETURN_KEY, lambda _: on_grab(state, grabber))
-    # Init form
+    # Init form with default state
     on_state_changed(state, lb1, lb2, lb3, lb_status, btn_grab)
     return window
